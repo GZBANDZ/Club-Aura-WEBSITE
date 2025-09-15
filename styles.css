@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Montserrat:wght@400;700&display=swap');
+
+:root {
+    --primary-blue: #57B9FF;
+    --dark-text: #222;
+    --light-text: #eee;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--light-text);
+    overflow-x: hidden;
+}
+
+/* Background image and overlay */
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://w0.peakpx.com/wallpaper/641/332/HD-wallpaper-lost-aura-lost-aura-dark.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -2;
+    filter: brightness(0.7);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+}
+
+/* Navigation bar styles */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+    z-index: 100;
+}
+
+.navbar a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    margin: 0 20px;
+    font-size: 1em;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #fff;
+}
+
+.content-wrapper {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+.content {
+    padding-top: 20px;
+    text-align: center;
+    padding-bottom: 40px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* Home Page Specifics */
+.home-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.top-banner {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: var(--light-text);
+    width: 100%;
+    padding: 10px 0;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2em;
+    letter-spacing: 2px;
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(3rem, 8vw, 6rem);
+    color: #fff;
+    margin: 40px 0 10px 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: clamp(1rem, 3vw, 2rem);
+    color: #fff;
+    margin: 0 0 30px 0;
+}
+
+.countdown {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.countdown-item {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: var(--primary-blue);
+    padding: 15px 20px;
+    border-radius: 5px;
+    min-width: 80px;
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    line-height: 1;
+}
+
+.countdown-label {
+    display: block;
+    font-size: 0.7em;
+    color: var(--light-text);
+    margin-top: 5px;
+}
+
+.countdown-note {
+    font-size: 0.9em;
+    color: var(--light-text);
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+/* This is the updated button style */
+.button {
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: var(--primary-blue);
+    padding: 18px 40px; /* Increased padding */
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5em; /* Increased font size */
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 25px; /* Increased margin */
+    border: 2px solid var(--primary-blue);
+}
+
+.button:hover {
+    background-color: var(--dark-text);
+    color: var(--primary-blue);
+    border-color: var(--primary-blue);
+}
+
+.hidden-message {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: var(--light-text);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    max-width: 300px;
+}
+
+/* This is the updated social link style */
+.social-links {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Added gap to space them out */
+    align-items: center;
+}
+
+.social-links a {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: var(--primary-blue);
+    padding: 15px 30px; /* Increased padding */
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: 'Orbitron', sans-serif;
+    border: 2px solid var(--primary-blue);
+    transition: background-color 0.3s ease;
+    width: 250px; /* Increased width */
+    text-align: center;
+}
+
+.social-links a:hover {
+    background-color: var(--dark-text);
+    color: var(--primary-blue);
+    border-color: var(--primary-blue);
+}
+
+/* Gallery and About Page Specifics */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.gallery-item {
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid var(--primary-blue);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: brightness(0.8);
+    transition: filter 0.3s ease;
+}
+
+.gallery-item:hover img {
+    filter: brightness(1);
+}
+
+.gallery-item-info {
+    padding: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    color: var(--light-text);
+}
+
+.about-section {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: var(--light-text);
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 800px;
+    text-align: center;
+    margin: 20px auto;
+    border: 2px solid var(--primary-blue);
+}
+
+.about-section h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: var(--primary-blue);
+}
+
+.about-section p {
+    line-height: 1.6;
+    margin-bottom: 1em;
+}
+
+.about-section img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 20px;
+    border: 2px solid var(--primary-blue);
+}

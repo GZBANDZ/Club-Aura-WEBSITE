@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLUB AURA</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="background-image"></div>
+<div class="overlay"></div>
+
+<nav class="navbar">
+    <a href="index.html">HOME</a>
+    <a href="gallery.html">GALLERY</a>
+    <a href="about.html">ABOUT</a>
+</nav>
+
+<div class="home-content">
+    <h1>CLUB AURA</h1>
+    <h2>COME JOIN UP</h2>
+
+    <div class="countdown">
+        <div class="countdown-item">
+            00<span class="countdown-label">DAYS</span>
+        </div>
+        <div class="countdown-item">
+            00<span class="countdown-label">HOURS</span>
+        </div>
+        <div class="countdown-item">
+            00<span class="countdown-label">MINUTES</span>
+        </div>
+        <div class="countdown-item">
+            00<span class="countdown-label">SECONDS</span>
+        </div>
+    </div>
+    <p class="countdown-note">*FIND UR NEW FAVORITE PLACE*</p>
+
+    <a href="https://www.lovense.com/r/lqgh41" class="button">AURA LOVENSE AFFILIATE</a>
+    <div class="hidden-message">
+        IF U WANT TO HAVE AURA YK WHERE TO GO!
+    </div>
+
+    <div class="social-links">
+        <a href="https://vrchat.com/home/group/grp_5e6149c8-1ae9-4fb4-af06-9e0c75b6fd07">CLUB AURA VRCHAT</a>
+        <a href="https://discord.com/invite/clubaura">CLUB AURA DISCORD</a>
+    </div>
+</div>
+
+<script>
+    function updateCountdown() {
+        const targetDate = new Date('2025-12-31T23:59:59').getTime();
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.querySelector('.countdown-item:nth-child(1)').innerHTML = `${String(days).padStart(2, '0')}<span class="countdown-label">DAYS</span>`;
+        document.querySelector('.countdown-item:nth-child(2)').innerHTML = `${String(hours).padStart(2, '0')}<span class="countdown-label">HOURS</span>`;
+        document.querySelector('.countdown-item:nth-child(3)').innerHTML = `${String(minutes).padStart(2, '0')}<span class="countdown-label">MINUTES</span>`;
+        document.querySelector('.countdown-item:nth-child(4)').innerHTML = `${String(seconds).padStart(2, '0')}<span class="countdown-label">SECONDS</span>`;
+
+        if (distance < 0) {
+            clearInterval(countdownInterval);
+            document.querySelector('.countdown').innerHTML = "<div style='color: var(--light-text); font-size: 1.5em;'>EXPIRED!</div>";
+            document.querySelector('.countdown-note').style.display = 'none';
+        }
+    }
+
+    const countdownInterval = setInterval(updateCountdown, 1000);
+    updateCountdown();
+</script>
+
+</body>
+</html>
